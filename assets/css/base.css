@@ -1,0 +1,13 @@
+* {
+
+    box-sizing: inherit;
+    /* ke thua tu the html co thuoc tinh boderbox*/
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+}
+
