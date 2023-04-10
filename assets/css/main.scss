@@ -23,7 +23,7 @@ $primaryColor: #f6c90e;
     background-color: #fff;
     margin-top: 10px;
     width: 60%;
-    height: 680px;
+    height: 640px;
     box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, 0.02),
       0 7px 5.4px rgba(0, 0, 0, 0.028), 0 12.1px 10.1px rgba(0, 0, 0, 0.035),
       0 19.8px 18.1px rgba(0, 0, 0, 0.042), 0 34.7px 33.8px rgba(0, 0, 0, 0.05),
@@ -51,6 +51,7 @@ $primaryColor: #f6c90e;
       height: 380px;
       border-radius: 100%;
       background-color: #f6c90e;
+      animation: scale 8s ease-in-out infinite alternate;
       top: -26%;
       left: -27%;
       z-index: 0;
@@ -71,7 +72,7 @@ $primaryColor: #f6c90e;
     background-color: #fff;
     margin-top: 10px;
     width: 30%;
-    height: 680px;
+    height: 640px;
     box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, 0.02),
       0 7px 5.4px rgba(0, 0, 0, 0.028), 0 12.1px 10.1px rgba(0, 0, 0, 0.035),
       0 19.8px 18.1px rgba(0, 0, 0, 0.042), 0 34.7px 33.8px rgba(0, 0, 0, 0.05),
@@ -108,6 +109,8 @@ $primaryColor: #f6c90e;
       background-color: #f6c90e;
       top: -29%;
       left: -46%;
+      animation: scale 8s ease-in-out infinite alternate;
+
       z-index: 0;
     }
     .cart__block {
@@ -153,9 +156,14 @@ $primaryColor: #f6c90e;
       margin-bottom: 45px;
     }
   }
- 
+  .\$ {
+    font-size: 1.4rem;
+    margin-left: 44px;
+    position: absolute;
+  }
 
   .cart__btn {
+    margin-right: 4px;
     cursor: pointer;
     background-color: #f6c90e;
     font-weight: 700;
@@ -280,5 +288,14 @@ $primaryColor: #f6c90e;
   }
   to {
     top: 50%;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(0.9);
   }
 }

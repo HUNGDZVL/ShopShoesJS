@@ -29,7 +29,8 @@ function getCourses() {
               <p class="product__des">${item.description}</p>  
              
               <div class="product__pricart">
-                  <p class="product__pri">$${item.price}</p>  
+                  <p class="product__pri">${item.price}</p>  
+                  <p class="$">$</p>
                   <button id=${item.id} class="cart__btn" >Add to cart</button>
                   <div id=${item.id} class="checkpd disable"><img src="./assets/icon/check.png" alt="check"/></div>
               </div>
@@ -94,7 +95,7 @@ setTimeout(() => {
          </div>
          <div class="cart__block__info">
               <p>${textProduct}</p>
-              <p>${textPrice}</p>
+              <p><span class="price">${textPrice}</span></p>
               <div class="info--icon">
                         <p class="decrease-js" id=${idItem}>-</p>
                         <p class="result-js">1</p>
@@ -114,8 +115,28 @@ setTimeout(() => {
         removeItemCart();
         handleClickiconTrash();
         handleIncreaAndDereac();
+        totalPrice();
+        
       });
     }
+  }
+  //hàm tính tổng tiền
+  function totalPrice(){
+    const listItemcart = $$(".list__product__cart > div  ");// lấy tất cả các item có trong giỏ hàng
+    let sumToltal = 0;
+    console.log(listItemcart);
+    for(let i = 0; i < listItemcart.length; i++) {//duyệt lần lượt các item trong giỏ hàng
+      let valuePrice = listItemcart[i].querySelector(".price").textContent //lấy giá của sản phẩm
+      let slProduct = listItemcart[i].querySelector(".result-js").textContent//lấy số lượng sản phẩm
+      let tolTal = valuePrice * slProduct;// tính tổng tiền
+
+      sumToltal = sumToltal + tolTal;
+
+    }
+    const resultTotal = $('h2 span');// lấy thẻ chưa giá tiền
+    resultTotal.textContent = sumToltal.toFixed(2);// gán lại giá trị mới
+
+
   }
 
   function handleIncreaAndDereac() {
@@ -129,6 +150,7 @@ setTimeout(() => {
         resultP.forEach((element) => {
           element.textContent = currentValue;
         });
+        totalPrice();
       });
     }
     for (let n of decr) {
@@ -161,6 +183,7 @@ setTimeout(() => {
              }
            }
         }
+        totalPrice();
       });
     }
   }
@@ -192,9 +215,11 @@ setTimeout(() => {
           iconRemove.parentNode.parentNode.parentNode.parentNode;
 
         listCartBlock.removeChild(parentItemcart); //xoa element con khỏi element cha
+         totalPrice();
         RemovetextCart();
       });
     }
+    
   }
 
   // event xử lí khi click icon rác sẽ toggle 2 nút btn add và check
