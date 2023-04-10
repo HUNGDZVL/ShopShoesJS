@@ -22,7 +22,7 @@ function getCourses() {
 
       const htmls = Data.map((item) => {
         return `
-        <div class="product__item col l-4" id="${item.id}">
+        <div class="product__item col l-4 m-6 c-12" id="${item.id}">
          
              <div class="product__img" style="background-color:${item.color} ;"> <img src=${item.image} id=${item.id} alt='hinh san pham'/></div>
               <h4 class="product__text">${item.name}</h4>  

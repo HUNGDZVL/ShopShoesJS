@@ -4,7 +4,7 @@
       "id": 1,
       "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/renew-ride-mens-running-shoe-JkhdfR-removebg-preview.png",
       "name": "Nike Air Zoom Pegasus 36",
-      "description": "The iconic Nike Air Zoom Pegasus 36 offers more cooling and mesh that targets breathability across high-heat areas. A slimmer heel collar and tongue reduce bulk, while exposed cables give you a snug fit at higher speeds.",
+      "description": "The iconic Nike Air Zoom Pegasus 36 offers more cooling and mesh that targets breathability across high-heat areas. A slimmer heel collar and tongue reduce bulk, while exposed cables give you a snug fit at higher.",
       "price": 108.97,
       "color": "#e1e7ed"
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/air-zoom-pegasus-36-shield-mens-running-shoe-24FBGb__1_-removebg-preview.png",
       "name": "Nike Air Zoom Pegasus 36 Shield",
-      "description": "The Nike Air Zoom Pegasus 36 Shield gets updated to conquer wet routes. A water-repellent upper combines with an outsole that helps create grip on wet surfaces, letting you run in confidence despite the weather.",
+      "description": "The Nike Air Zoom Pegasus 36 Shield gets updated to conquer wet routes. A water-repellent upper combines with an outsole that helps create grip on wet surfaces, letting you run in confidence despite.",
       "price": 89.97,
       "color": "#4D317F"
     },
@@ -45,7 +45,7 @@
       "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/react-infinity-run-flyknit-mens-running-shoe-RQ484B__2_-removebg-preview.png",
       "name": "Nike React Infinity Run Flyknit",
       "description": "A pioneer in the running shoe frontier honors the original pioneer of running culture with the Nike React Infinity Run Flyknit. Blue Ribbon Track Club-inspired details pay homage to the haven that was created before running was even. ",
-      "price": 160.0,
+      "price": 160.03,
       "color": "#F2F5F4"
     },
     {
@@ -53,7 +53,7 @@
       "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/react-miler-mens-running-shoe-DgF6nr-removebg-preview.png",
       "name": "Nike React Miler",
       "description": "The Nike React Miler gives you trusted stability for miles with athlete-informed performance. Made for dependability on your long runs, its intuitive design offers a locked-in fit and a durable feel.",
-      "price": 130.0,
+      "price": 130.02,
       "color": "#22AFDC"
     },
     {
@@ -77,7 +77,7 @@
       "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/zoom-fly-3-premium-mens-running-shoe-XhzpPH-removebg-preview.png",
       "name": "Nike Zoom Fly 3 Premium",
       "description": "Inspired by the Vaporfly, the Nike Zoom Fly 3 Premium gives distance runners race-day comfort and durability. The power of a carbon fiber plate keeps you in the running mile after mile.",
-      "price": 160.0,
+      "price": 160.01,
       "color": "#54D4C9"
     },
      {
@@ -125,7 +125,7 @@
       "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/react-infinity-run-flyknit-mens-running-shoe-RQ484B__2_-removebg-preview.png",
       "name": "Nike React Infinity Run Flyknit",
       "description": "A pioneer in the running shoe frontier honors the original pioneer of running culture with the Nike React Infinity Run Flyknit. Blue Ribbon Track Club-inspired details pay homage to the haven.",
-      "price": 160.0,
+      "price": 160.04,
       "color": "#F2F5F4"
     },
     {
@@ -133,7 +133,7 @@
       "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/react-miler-mens-running-shoe-DgF6nr-removebg-preview.png",
       "name": "Nike React Miler",
       "description": "The Nike React Miler gives you trusted stability for miles with athlete-informed performance. Made for dependability on your long runs, its intuitive design offers a locked-in fit and a durable feel.",
-      "price": 130.0,
+      "price": 130.03,
       "color": "#22AFDC"
     },
     {
@@ -157,7 +157,7 @@
       "image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1315882/zoom-fly-3-premium-mens-running-shoe-XhzpPH-removebg-preview.png",
       "name": "Nike Zoom Fly 3 Premium",
       "description": "Inspired by the Vaporfly, the Nike Zoom Fly 3 Premium gives distance runners race-day comfort and durability. The power of a carbon fiber plate keeps you in the running mile after.",
-      "price": 160.0,
+      "price": 160.01,
       "color": "#54D4C9"
     }
   ]
