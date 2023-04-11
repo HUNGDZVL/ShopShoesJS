@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop Shoes</title>
+    <link rel="icon" type="image/x-icon" href="./assets/icon/nike.png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&amp;display=swap"
       rel="stylesheet"
@@ -20,6 +25,7 @@
   </head>
   <body>
     <div class="app">
+      <div class="app__form"><button id="sigin">SigIn</button> <button id="login">LogIn</button></div>
       <div class="app__layout grid wide">
         <div class="app__container">
           <img src="./assets/icon/nike.png" />
@@ -31,10 +37,152 @@
         <div class="app__cart">
           <img src="./assets/icon/nike.png" />
           <h2>Your Cart<span style="margin-left: 100px">00</span>$</h2>
-           
+
           <h4>your cart is empty</h4>
           <div class="cart__block">
             <div class="list__product__cart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-js">
+      <div class="modal__overlay"></div>
+      <div class="modal__body">
+        <div class="auth-form close" id="sigin--js">
+          <div class="auth-form__container">
+            <div class="auth-form__header">
+              <h3 class="auth-form__heading">SigIn</h3>
+              <span class="auth-form__switch-btn">LogIn</span>
+            </div>
+            <div class="auth-form__form">
+              <div class="auth-form__group">
+                <input
+                  type="text"
+                  class="auth-form__input"
+                  placeholder="your email"
+                />
+              </div>
+
+              <div class="auth-form__group">
+                <input
+                  type="password"
+                  class="auth-form__input"
+                  placeholder="your password"
+                />
+              </div>
+
+              <div class="auth-form__group">
+                <input
+                  type="password"
+                  class="auth-form__input"
+                  placeholder="Re-enter password"
+                />
+              </div>
+            </div>
+            <div class="auth-form__aside">
+              <p class="auth-form__policy-text">
+                By registering, you agree to
+                <a href="#" class="auth-form__text-link">Terms of Service</a>
+                &
+                <a href="#" class="auth-form__text-link">Privacy Policy</a>
+              </p>
+            </div>
+            <div class="auth-form__controls">
+              <button
+                class="btn btn--normal auth-form__controls-back"
+                onclick="closeFormauth()"
+              >
+                BACK
+              </button>
+              <button class="btn btn--primary">SIGIN</button>
+            </div>
+          </div>
+          <div class="auth-form__socials">
+            <a
+              href="#"
+              class="auth-form__socials--facebook btn btn--size-s btn--with-icon"
+            >
+              <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+              <span class="auth-form__socials-title"
+                >Connect facebook</span
+              ></a
+            >
+
+            <a
+              href="#"
+              class="auth-form__socials--google btn btn--size-s btn--with-icon"
+            >
+              <i class="auth-form__socials-icon fab fa-google"></i>
+              <span class="auth-form__socials-title"
+                >Connect to Google</span
+              ></a
+            >
+          </div>
+        </div>
+        <!-- Login Form ( form  dang nhap)  -->
+        <div class="auth-form close" id="login--js">
+          <div class="auth-form__container">
+            <div class="auth-form__header">
+              <h3 class="auth-form__heading">LogIn</h3>
+              <span class="auth-form__switch-btn">SigIn</span>
+            </div>
+
+            <div class="auth-form__form">
+              <div class="auth-form__group">
+                <input
+                  type="text"
+                  class="auth-form__input"
+                  placeholder="your email"
+                />
+              </div>
+
+              <div class="auth-form__group">
+                <input
+                  type="password"
+                  class="auth-form__input"
+                  placeholder="your password"
+                />
+              </div>
+            </div>
+            <div class="auth-form__aside">
+              <div class="auth-form__help">
+                <a href="#" class="auth-form__help-link auth-form__help-forgot"
+                  >Forgot password</a
+                >
+                <span class="auth-form__help-saparate"></span>
+                <a href="" class="auth-form__help-link">Need help</a>
+              </div>
+            </div>
+
+            <div class="auth-form__controls">
+              <button
+                class="btn btn--normal auth-form__controls-back " onclick="closeFormauth()"
+              >
+                BACK
+              </button>
+              <button class="btn btn--primary">lOGIN</button>
+            </div>
+          </div>
+          <div class="auth-form__socials">
+            <a
+              href="#"
+              class="auth-form__socials--facebook btn btn--size-s btn--with-icon"
+            >
+              <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+              <span class="auth-form__socials-title"
+                >connect to facebook</span
+              ></a
+            >
+
+            <a
+              href="#"
+              class="auth-form__socials--google btn btn--size-s btn--with-icon"
+            >
+              <i class="auth-form__socials-icon fab fa-google"></i>
+              <span class="auth-form__socials-title"
+                >connect to Google</span
+              ></a
+            >
           </div>
         </div>
       </div>

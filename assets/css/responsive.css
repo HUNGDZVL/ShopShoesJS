@@ -1,11 +1,23 @@
 @media (min-width: 740px) and (max-width:1023px) {
     .app {
         margin-top: 22%;
+
+    }
+
+    .app__form {
+        top: 100px!important;
+        right: 50px!important;
+        font-size: 30px!important;
+    }
+
+    .app__form button{
+        line-height: 5rem!important;
+        padding: 0 22px!important;
     }
 
     .app__cart {
         padding: 0 16px !important;
-        width: 36%!important;
+        width: 36% !important;
     }
 
     .app__cart>h2 {
@@ -42,6 +54,9 @@
 }
 
 @media (max-width: 740px) {
+    .app__form{
+        display: none;
+    }
 
     .app__layout {
         flex-direction: column;

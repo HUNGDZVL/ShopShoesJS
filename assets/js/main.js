@@ -4,7 +4,7 @@ const Api = "data.json";
 const $$ = document.querySelectorAll.bind(document);
 const $ = document.querySelector.bind(document);
 
-const listProducts = $(".list__product");// lấy thẻ block chưa data render browser
+const listProducts = $(".list__product"); // lấy thẻ block chưa data render browser
 
 (function start() {
   getCourses();
@@ -18,7 +18,7 @@ function getCourses() {
       return response.json();
     })
     .then((data) => {
-      const Data = data.shoes;//chọt vô shoes lấy data
+      const Data = data.shoes; //chọt vô shoes lấy data
 
       const htmls = Data.map((item) => {
         return `
@@ -39,12 +39,13 @@ function getCourses() {
         `;
       });
 
-      listProducts.innerHTML = htmls.join("");// nối các block data từ api bằng  ' ' 
+      listProducts.innerHTML = htmls.join(""); // nối các block data từ api bằng  ' '
     });
 }
-setTimeout(() => {// time delay để chọt vô dom xử lí event
-  const cartbtn = $$(".cart__btn");// lấy danh sách các nút add cart
-  const checbtnpd = $$(".checkpd");// lấy danh sách các nút check
+setTimeout(() => {
+  // time delay để chọt vô dom xử lí event
+  const cartbtn = $$(".cart__btn"); // lấy danh sách các nút add cart
+  const checbtnpd = $$(".checkpd"); // lấy danh sách các nút check
 
   (function start() {
     handleClickbtnCart();
@@ -52,7 +53,8 @@ setTimeout(() => {// time delay để chọt vô dom xử lí event
 
   // hàm xử lí click btn add cart để get thông tin sản phẩm ra cart
   function handleClickbtnCart() {
-    for (let item of cartbtn) { // duyệt qua tất cả các nút add cart
+    for (let item of cartbtn) {
+      // duyệt qua tất cả các nút add cart
       item.addEventListener("click", (e) => {
         const checkbtn = e.target; // lấy chính nút nhận event click
 
@@ -115,72 +117,74 @@ setTimeout(() => {// time delay để chọt vô dom xử lí event
         removeItemCart(); // hàm xóa sản phẩm khi click nut xóa
         handleClickiconTrash(); // hàm toggle nut add vs check sản phẩm khi click nut xóa
         handleIncreaAndDereac(); // ham tăng giảm + -
-        totalPrice();// hàm tính giá tiền
+        totalPrice(); // hàm tính giá tiền
       });
     }
   }
   //hàm tính tổng tiền
-  function totalPrice(){
-    const listItemcart = $$(".list__product__cart > div  ");// lấy tất cả các item có trong giỏ hàng
+  function totalPrice() {
+    const listItemcart = $$(".list__product__cart > div  "); // lấy tất cả các item có trong giỏ hàng
     let sumToltal = 0;
     console.log(listItemcart);
-    for(let i = 0; i < listItemcart.length; i++) {//duyệt lần lượt các item trong giỏ hàng
-      let valuePrice = listItemcart[i].querySelector(".price").textContent //lấy giá của sản phẩm
-      let slProduct = listItemcart[i].querySelector(".result-js").textContent//lấy số lượng sản phẩm
-      let tolTal = valuePrice * slProduct;// tính tổng tiền
+    for (let i = 0; i < listItemcart.length; i++) {
+      //duyệt lần lượt các item trong giỏ hàng
+      let valuePrice = listItemcart[i].querySelector(".price").textContent; //lấy giá của sản phẩm
+      let slProduct = listItemcart[i].querySelector(".result-js").textContent; //lấy số lượng sản phẩm
+      let tolTal = valuePrice * slProduct; // tính tổng tiền
 
       sumToltal = sumToltal + tolTal;
-
     }
-    const resultTotal = $('h2 span');// lấy thẻ chưa giá tiền
-    resultTotal.textContent = sumToltal.toFixed(2);// gán lại giá trị mới
-
-
+    const resultTotal = $("h2 span"); // lấy thẻ chưa giá tiền
+    resultTotal.textContent = sumToltal.toFixed(2); // gán lại giá trị mới
   }
 
   function handleIncreaAndDereac() {
-    let currentValue = 0; 
+    let currentValue = 0;
     const incr = $$(".increase-js");
     const decr = $$(".decrease-js");
     const resultP = $$(".result-js");
-    for (let m of incr) { // duyệt qa tất cả dấu +
-      m.addEventListener("click", () => {// nhận event click
+    for (let m of incr) {
+      // duyệt qa tất cả dấu +
+      m.addEventListener("click", () => {
+        // nhận event click
         currentValue++;
         resultP.forEach((element) => {
           element.textContent = currentValue;
         });
-        totalPrice();// tăng giá tiền khi click +
+        totalPrice(); // tăng giá tiền khi click +
       });
     }
     for (let n of decr) {
-      n.addEventListener("click", (e) => {// nhận event khi click -
+      n.addEventListener("click", (e) => {
+        // nhận event khi click -
         --currentValue;
         for (let item of resultP) {
           item.textContent = currentValue;
         }
-        if (currentValue == 0 || currentValue == -1) { // kiểm tra xem nếu như giảm tới 0 or -1 thì xóa toàn bộ sản phẩm
+        if (currentValue == 0 || currentValue == -1) {
+          // kiểm tra xem nếu như giảm tới 0 or -1 thì xóa toàn bộ sản phẩm
           const listCartBlocks = $(".list__product__cart");
-          const des = e.target;//lấy nút click chính nó
+          const des = e.target; //lấy nút click chính nó
           const parentItemcarts = des.parentNode.parentNode.parentNode; //lay ra the cha chứa chính nó
-          listCartBlocks.removeChild(parentItemcarts);// xóa thẻ con từ thẻ cha
-          RemovetextCart();// kiểm tra để ẩn hiện text 
-          const iddes=e.target.id;// lấy id của icon (-)
+          listCartBlocks.removeChild(parentItemcarts); // xóa thẻ con từ thẻ cha
+          RemovetextCart(); // kiểm tra để ẩn hiện text
+          const iddes = e.target.id; // lấy id của icon (-)
           console.log(iddes);
-           for (let w of cartbtn) {
-             // duyệt btn add
-             var idw = w.id; // lấy id của btn add
-             for (let r of checbtnpd) {
-               // duyệt song song btn check
-               var idr = r.id; // lấy id của btn check
-               if (iddes == idr && idr == idw) {
-                 // nếu như id của add bằng checkk == id của icon rác thì thực hiện hành vi
-                 w.classList.remove("disable");
-                 r.classList.add("disable");
-               }
-             }
-           }
+          for (let w of cartbtn) {
+            // duyệt btn add
+            var idw = w.id; // lấy id của btn add
+            for (let r of checbtnpd) {
+              // duyệt song song btn check
+              var idr = r.id; // lấy id của btn check
+              if (iddes == idr && idr == idw) {
+                // nếu như id của add bằng checkk == id của icon rác thì thực hiện hành vi
+                w.classList.remove("disable");
+                r.classList.add("disable");
+              }
+            }
+          }
         }
-        totalPrice();// tính lại giá tiền khi lick -
+        totalPrice(); // tính lại giá tiền khi lick -
       });
     }
   }
@@ -192,16 +196,18 @@ setTimeout(() => {// time delay để chọt vô dom xử lí event
     const ChildBlock = ParentBlock.querySelector(":first-child");
     const textCartcontent = $(".app__cart h4");
 
-    if (ChildBlock !== null) { // kiểm tra xem nếu có phần tử đầu tiên thì xóa text
+    if (ChildBlock !== null) {
+      // kiểm tra xem nếu có phần tử đầu tiên thì xóa text
       return textCartcontent.classList.add("disable");
-    } else {//nếu k có phần tử đầu tiên thì hiện text
+    } else {
+      //nếu k có phần tử đầu tiên thì hiện text
       return textCartcontent.classList.remove("disable");
     }
   }
 
   // xóa item trong list cart khi click icon rác trong list cart
   function removeItemCart() {
-    const iconRemove = $$(".icon--remove");// láy icon rác
+    const iconRemove = $$(".icon--remove"); // láy icon rác
     const listCartBlock = $(".list__product__cart"); //get element cha chưa icon
 
     for (let item of iconRemove) {
@@ -212,11 +218,10 @@ setTimeout(() => {// time delay để chọt vô dom xử lí event
           iconRemove.parentNode.parentNode.parentNode.parentNode;
 
         listCartBlock.removeChild(parentItemcart); //xoa element con khỏi element cha
-         totalPrice();// tính lại giá tiền
-        RemovetextCart();// ẩn hiện text 
+        totalPrice(); // tính lại giá tiền
+        RemovetextCart(); // ẩn hiện text
       });
     }
-    
   }
 
   // event xử lí khi click icon rác sẽ toggle 2 nút btn add và check
@@ -245,3 +250,39 @@ setTimeout(() => {// time delay để chọt vô dom xử lí event
     });
   }
 }, 1000);
+
+// open close modal from
+const sigIn = $("#sigin"); /*id btn Sign*/
+const logIn = $("#login"); /*id btn Login*/
+const modalForm = $("#modal-js"); /*id form tổng*/
+const signForm = $("#sigin--js"); /*id form sign*/
+const lognForm = $("#login--js"); /*id form log*/
+//mở modal khi bấm btn sigin
+function openModalSigIn() {
+  modalForm.style.display = "flex";
+  signForm.classList.remove("close");
+  lognForm.classList.add("close");
+}
+// hàm đóng modal
+function closeFormauth() {
+  modalForm.style.display = "none";
+}
+//mở modal khi bấm btn login
+function openModalLogin() {
+  modalForm.style.display = "flex";
+  lognForm.classList.remove("close");
+  signForm.classList.add("close");
+}
+
+sigIn.addEventListener("click", openModalSigIn);// mở modal sigin khi click btn
+
+logIn.addEventListener("click", openModalLogin);// mở modal login khi click btn
+
+modalForm.addEventListener("click",closeFormauth);// đóng modal khi click ngoài phạm vi form login sigin
+
+signForm.addEventListener("click",(e)=>{
+  e.stopPropagation();// ngăn hành vi nổi bọt lên form sigIn
+})
+lognForm.addEventListener("click", (e) => {
+  e.stopPropagation(); // ngăn hành vi nổi bọt lên form lognIn
+});

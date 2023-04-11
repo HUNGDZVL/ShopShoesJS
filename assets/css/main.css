@@ -11,13 +11,33 @@
   background-color: #f6c90e;
   animation: Growto 8s ease-in-out infinite alternate;
 }
+.app .app__form {
+  position: absolute;
+  top: 5px;
+  right: 105px;
+  font-size: 16px;
+}
+.app .app__form button {
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  background-color: #f6c90e;
+  line-height: 2.5rem;
+  margin-left: 2px;
+  cursor: pointer;
+  padding: 0 16px;
+  font-weight: 500;
+}
+.app .app__form button:hover {
+  transform: scale(1.1);
+}
 .app .app__layout {
   display: flex;
   justify-content: space-around;
 }
 .app .app__container {
   background-color: #fff;
-  margin-top: 10px;
+  margin-top: 40px;
   width: 60%;
   height: 640px;
   box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, 0.02), 0 7px 5.4px rgba(0, 0, 0, 0.028), 0 12.1px 10.1px rgba(0, 0, 0, 0.035), 0 19.8px 18.1px rgba(0, 0, 0, 0.042), 0 34.7px 33.8px rgba(0, 0, 0, 0.05), 0 81px 81px rgba(0, 0, 0, 0.07);
@@ -62,7 +82,7 @@
 }
 .app .app__cart {
   background-color: #fff;
-  margin-top: 10px;
+  margin-top: 40px;
   width: 30%;
   height: 640px;
   box-shadow: 0 3.2px 2.2px rgba(0, 0, 0, 0.02), 0 7px 5.4px rgba(0, 0, 0, 0.028), 0 12.1px 10.1px rgba(0, 0, 0, 0.035), 0 19.8px 18.1px rgba(0, 0, 0, 0.042), 0 34.7px 33.8px rgba(0, 0, 0, 0.05), 0 81px 81px rgba(0, 0, 0, 0.07);
@@ -270,11 +290,163 @@
     top: 50%;
   }
 }
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: none;
+}
+.modal .modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.modal .modal__body {
+  position: relative;
+  margin: auto;
+  z-index: 1;
+  animation: growth linear 0.1s;
+}
+.modal .auth-form__container {
+  padding: 0 32px;
+}
+.modal .auth-form {
+  width: 500px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.modal .auth-form__header {
+  margin-top: 10px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal .auth-form__heading {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: rgb(16, 12, 12);
+}
+.modal .auth-form__switch-btn {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #dd4411;
+  cursor: text;
+}
+.modal .auth-form__input {
+  width: 100%;
+  height: 40px;
+  margin-top: 16px;
+  padding: 0 12px;
+  font-size: 1.4rem;
+  border-radius: 2px;
+  outline: none;
+  border: 1px solid #d4d1d1;
+}
+.modal .auth-form__aside {
+  margin-top: 18px;
+}
+.modal .auth-form__policy-text {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+  padding: 0 12px;
+}
+.modal .auth-form__text-link {
+  color: #dd4411;
+  text-decoration: none;
+}
+.modal .auth-form__controls {
+  margin-top: 80px;
+  display: flex;
+  justify-content: flex-end;
+}
+.modal .auth-form__controls-back {
+  margin-right: 8px;
+  z-index: 2;
+}
+.modal .btn.btn--primary {
+  color: #fff;
+  background-color: #dd4411;
+}
+.modal .btn.btn--normal:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.modal .auth-form__socials {
+  background-color: #f5f5f5;
+  padding: 16px 36px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 22px;
+}
+.modal .close {
+  display: none !important;
+}
+.modal .open {
+  display: flex !important;
+}
+.modal .auth-form__socials-icon {
+  font-size: 1.8rem;
+}
+.modal .auth-form__socials--facebook {
+  background-color: #3a5a98;
+  color: #fff;
+}
+.modal .btn.btn--size-s {
+  padding: 0 8px;
+  height: 32px;
+  font-size: 12px;
+}
+.modal .auth-form__socials-title {
+  margin: 0 36px;
+}
+.modal .auth-form__socials--google {
+  background-color: #fff;
+  color: #666;
+}
+.modal .auth-form__socials--google .auth-form__socials-icon {
+  color: transparent;
+  background: conic-gradient(red 0deg, red 45deg, blue 45deg, blue 135deg, green 135deg, green 225deg, yellow 225deg, yellow 275deg, red 275deg);
+  border-radius: 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.modal .auth-form__help {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal .auth-form__help-forgot {
+  color: #dd4411 !important;
+}
+.modal .auth-form__help-saparate {
+  display: block;
+  height: 22px;
+  margin: -4px 16px 0;
+  border-left: 1px solid #eaeaea;
+}
+.modal .auth-form__help-link {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #939393;
+}
+
 @keyframes scale {
   from {
     transform: scale(1.1);
   }
   to {
     transform: scale(0.9);
+  }
+}
+@keyframes growth {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
   }
 }/*# sourceMappingURL=main.css.map */
