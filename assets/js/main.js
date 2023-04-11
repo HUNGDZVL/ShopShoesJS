@@ -70,13 +70,11 @@ setTimeout(() => {
         //get style color
         const styleBg = parentBtn.querySelector(".product__img");
         const backgroundColor = styleBg.style.backgroundColor;
-        console.log(backgroundColor);
         //get src img
         const imageProduct = parentBtn.querySelector("img");
         const srcImg = imageProduct.src;
         //get id
         var idItem = imageProduct.id;
-        console.log(idItem);
 
         //get textName
         const nameProduct = parentBtn.querySelector("h4");
@@ -86,7 +84,7 @@ setTimeout(() => {
         const textPrice = priceProduct.textContent;
 
         const blockCart = $(".list__product__cart"); // lấy thông tin thẻ chưa các sản phẩm add vô cart
-        console.log(blockCart);
+        // console.log(blockCart);
 
         const creatDiv = document.createElement("div"); // tạo một khối div bao quanh lấy item trong cart
         creatDiv.id = "item__Cart"; // thêm id vào div
@@ -125,7 +123,7 @@ setTimeout(() => {
   function totalPrice() {
     const listItemcart = $$(".list__product__cart > div  "); // lấy tất cả các item có trong giỏ hàng
     let sumToltal = 0;
-    console.log(listItemcart);
+    // console.log(listItemcart);
     for (let i = 0; i < listItemcart.length; i++) {
       //duyệt lần lượt các item trong giỏ hàng
       let valuePrice = listItemcart[i].querySelector(".price").textContent; //lấy giá của sản phẩm
@@ -139,28 +137,43 @@ setTimeout(() => {
   }
 
   function handleIncreaAndDereac() {
-    let currentValue = 0;
     const incr = $$(".increase-js");
+    // console.log(incr);
     const decr = $$(".decrease-js");
-    const resultP = $$(".result-js");
     for (let m of incr) {
+      let currentValue = 0;
+
       // duyệt qa tất cả dấu +
-      m.addEventListener("click", () => {
+      m.addEventListener("click", (e) => {
         // nhận event click
+        const element = e.target; // lấy chính thẻ click
+        const prElement = element.parentNode.parentNode; // lấy thẻ cha chứa nó
+        // console.log(prElement);
+        const resultSl = prElement.querySelector(".result-js"); // lấy thẻ chưa số lượng trong thẻ cha
+        // console.log(resultSl);
         currentValue++;
-        resultP.forEach((element) => {
-          element.textContent = currentValue;
-        });
+
+        resultSl.textContent = currentValue;
+
         totalPrice(); // tăng giá tiền khi click +
       });
     }
     for (let n of decr) {
       n.addEventListener("click", (e) => {
+        const Item = e.target;
+
+        const prItem = Item.parentNode.parentNode;
+        console.log(prItem);
+
+        const valuede = prItem.querySelector(".result-js").textContent;
+        console.log(valuede);
+        let currentValue = valuede;
         // nhận event khi click -
-        --currentValue;
-        for (let item of resultP) {
-          item.textContent = currentValue;
-        }
+
+        const resultsl = prItem.querySelector(".result-js");
+        console.log(resultsl);
+        currentValue--;
+        resultsl.textContent = currentValue;
         if (currentValue == 0 || currentValue == -1) {
           // kiểm tra xem nếu như giảm tới 0 or -1 thì xóa toàn bộ sản phẩm
           const listCartBlocks = $(".list__product__cart");
@@ -169,7 +182,7 @@ setTimeout(() => {
           listCartBlocks.removeChild(parentItemcarts); // xóa thẻ con từ thẻ cha
           RemovetextCart(); // kiểm tra để ẩn hiện text
           const iddes = e.target.id; // lấy id của icon (-)
-          console.log(iddes);
+          // console.log(iddes);
           for (let w of cartbtn) {
             // duyệt btn add
             var idw = w.id; // lấy id của btn add
@@ -274,15 +287,15 @@ function openModalLogin() {
   signForm.classList.add("close");
 }
 
-sigIn.addEventListener("click", openModalSigIn);// mở modal sigin khi click btn
+sigIn.addEventListener("click", openModalSigIn); // mở modal sigin khi click btn
 
-logIn.addEventListener("click", openModalLogin);// mở modal login khi click btn
+logIn.addEventListener("click", openModalLogin); // mở modal login khi click btn
 
-modalForm.addEventListener("click",closeFormauth);// đóng modal khi click ngoài phạm vi form login sigin
+modalForm.addEventListener("click", closeFormauth); // đóng modal khi click ngoài phạm vi form login sigin
 
-signForm.addEventListener("click",(e)=>{
-  e.stopPropagation();// ngăn hành vi nổi bọt lên form sigIn
-})
+signForm.addEventListener("click", (e) => {
+  e.stopPropagation(); // ngăn hành vi nổi bọt lên form sigIn
+});
 lognForm.addEventListener("click", (e) => {
   e.stopPropagation(); // ngăn hành vi nổi bọt lên form lognIn
 });
